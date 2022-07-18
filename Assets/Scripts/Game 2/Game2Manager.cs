@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Game2Manager : MonoBehaviour
 {
     public LayerMask starLayerMask;
+    public Star[] stars;
     public Bell[] bells;
 
     private int starsClicked = 0;
@@ -13,33 +15,47 @@ public class Game2Manager : MonoBehaviour
     void Start()
     {
         sceneTransition = SceneTransition.Find();
+
+        stars[0].gameObject.SetActive(true);
+        stars[1].gameObject.SetActive(true);
+        stars[0].MakeReady();
     }
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            CheckForStars();
+            CheckStars();
         }
     }
 
-    private void CheckForStars()
+    private void CheckStars()
     {
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         var hits = Physics2D.RaycastAll(ray.origin, ray.direction, Mathf.Infinity, starLayerMask);
 
         foreach (var hit in hits)
         {
-            ClickedStar(hit.collider.gameObject);
+            GameObject obj = hit.collider.gameObject;
+            Star star = obj.GetComponent<Star>();
+
+            if (star.isReady)
+            {
+                ClickedStar(star);
+            }
         }
     }
 
-    private void ClickedStar(GameObject obj)
+    private void ClickedStar(Star star)
     {
-        bells[starsClicked++].Ring();
-        Destroy(obj);
+        star.OnClick();
+        bells.ElementAtOrDefault(starsClicked)?.Ring();
+        stars.ElementAtOrDefault(starsClicked + 1)?.MakeReady();
+        stars.ElementAtOrDefault(starsClicked + 2)?.gameObject?.SetActive(true);
 
-        if (starsClicked == bells.Length)
+        starsClicked += 1;
+
+        if (starsClicked == stars.Length)
         {
             sceneTransition.NextScene();
         }

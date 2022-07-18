@@ -4,16 +4,26 @@ using UnityEngine;
 
 public class Star : MonoBehaviour
 {
-    public float activateTime = 0f;
+    public bool isReady = false;
 
-    void Start()
+    private Animator animator;
+
+    void Awake()
     {
+        animator = GetComponent<Animator>();
         gameObject.SetActive(false);
-        Invoke("Activate", activateTime);
     }
 
-    private void Activate()
+    public void MakeReady()
     {
-        gameObject.SetActive(true);
+        animator.SetBool("ready", true);
+        isReady = true;
+    }
+
+    public void OnClick()
+    {
+        animator.SetBool("clicked", true);
+        animator.SetBool("ready", false);
+        isReady = false;
     }
 }
