@@ -46,20 +46,23 @@ public class MenuManager : MonoBehaviour
 
         foreach (var hit in result)
         {
-            var button = hit.gameObject.GetComponent<Button>();
-            if (button != null && button.interactable)
+            var selectable = hit.gameObject.GetComponent<Selectable>();
+            if (selectable != null && selectable.interactable)
             {
-                button.Select();
+                selectable.Select();
             }
         }
 
-        if (eventSystem.currentSelectedGameObject != null)
+        var selected = eventSystem.currentSelectedGameObject;
+        if (selected != null)
         {
-            flashlightTransform.position = Vector3.Lerp(
-                flashlightTransform.position,
-                eventSystem.currentSelectedGameObject.transform.position,
+            Vector3 pos = flashlightTransform.position;
+            pos.y = Mathf.Lerp(
+                pos.y,
+                selected.transform.position.y,
                 flashlightLerpSpeed * Time.deltaTime
             );
+            flashlightTransform.position = pos;
         }
     }
 
