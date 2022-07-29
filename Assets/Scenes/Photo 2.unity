@@ -546,17 +546,6 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   progress: 0
---- !u!114 &687706284 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7619362297781566896, guid: d9e94154aac2a6aa6864a5447b503edc, type: 3}
-  m_PrefabInstance: {fileID: 2012134031}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73edcf87c33d6edfa8449eba806cb843, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &810122181
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,7 +660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bfa44649ffc9cc1bb7d82d2ed352fe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneTransition: {fileID: 687706284}
+  locked: 1
 --- !u!4 &1181043002
 Transform:
   m_ObjectHideFlags: 0
@@ -801,6 +790,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7619362297781566896, guid: d9e94154aac2a6aa6864a5447b503edc, type: 3}
+      propertyPath: saveProgress
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7619362297781566897, guid: d9e94154aac2a6aa6864a5447b503edc, type: 3}
       propertyPath: m_Name
       value: Scene Transition

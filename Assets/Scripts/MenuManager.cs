@@ -29,6 +29,8 @@ public class MenuManager : MonoBehaviour
     void Start()
     {
         sceneTransition = SceneTransition.Find();
+        continueButton.interactable = PlayerPrefs.HasKey("scene");
+        volumeSlider.value = PlayerPrefs.GetFloat("volume", 1f);
 
 #if UNITY_EDITOR || UNITY_STANDALONE
         quitButton.SetActive(true);
@@ -73,7 +75,8 @@ public class MenuManager : MonoBehaviour
 
     public void OnPressedContinue()
     {
-
+        int savedScene = PlayerPrefs.GetInt("scene");
+        sceneTransition.GotoScene(savedScene);
     }
 
     public void OnPressedOpenSettings()
@@ -86,6 +89,7 @@ public class MenuManager : MonoBehaviour
     {
         mainPanel.SetActive(true);
         settingsPanel.SetActive(false);
+        PlayerPrefs.Save();
     }
 
     public void OnPressedQuit()
@@ -95,6 +99,8 @@ public class MenuManager : MonoBehaviour
 
     public void OnVolumeChanged()
     {
-        mixer.SetFloat("Volume", Mathf.Lerp(-80f, 0f, volumeSlider.value));
+        var vol = volumeSlider.value;
+        mixer.SetFloat("Volume", Mathf.Lerp(-80f, 0f, vol));
+        PlayerPrefs.SetFloat("volume", vol);
     }
 }

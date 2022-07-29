@@ -9,6 +9,7 @@ public class SceneTransition : MonoBehaviour
 {
     public int nextScene = 1;
     public bool relative = true;
+    public bool saveProgress = false;
 
     private Animator animator;
     private int sceneToLoad = -1;
@@ -16,6 +17,17 @@ public class SceneTransition : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+
+        if (saveProgress)
+        {
+            PlayerPrefs.SetInt("scene", GetCurrentScene());
+            PlayerPrefs.Save();
+        }
+    }
+
+    private int GetCurrentScene()
+    {
+        return SceneManager.GetActiveScene().buildIndex;
     }
 
     public void NextScene()
@@ -24,7 +36,7 @@ public class SceneTransition : MonoBehaviour
 
         if (relative)
         {
-            index += SceneManager.GetActiveScene().buildIndex;
+            index += GetCurrentScene();
         }
 
         GotoScene(index);
@@ -32,10 +44,10 @@ public class SceneTransition : MonoBehaviour
 
     public void RestartScene()
     {
-        GotoScene(SceneManager.GetActiveScene().buildIndex);
+        GotoScene(GetCurrentScene());
     }
 
-    private void GotoScene(int index)
+    public void GotoScene(int index)
     {
         if (sceneToLoad == -1) // don't override ongoing transition
         {

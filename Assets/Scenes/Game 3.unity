@@ -837,8 +837,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waitTime: 60
-  restartCurrent: 0
-  sceneTransition: {fileID: 711335355}
+  restart: 0
 --- !u!4 &1306330797
 Transform:
   m_ObjectHideFlags: 0
