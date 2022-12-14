@@ -15,7 +15,7 @@ public class SkippableScene : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.anyKeyDown)
         {
             if (!locked)
             {
