@@ -10,17 +10,14 @@ public class MenuManager : MonoBehaviour
 {
     [Header("Panels")]
     public GameObject mainPanel;
-    public GameObject settingsPanel;
 
     [Header("Controls")]
     public Button continueButton;
     public GameObject quitButton;
-    public Slider mainVolumeSlider;
-    public Slider voiceVolumeSlider;
 
-    [Header("Flashlight")]
-    public RectTransform flashlightTransform;
-    public float flashlightLerpSpeed = 60f;
+    [Header("Slide")]
+    public RectTransform slideTransform;
+    public float slideLerpSpeed = 60f;
 
     [Header("Misc")]
     public AudioMixer mixer;
@@ -31,11 +28,9 @@ public class MenuManager : MonoBehaviour
     {
         sceneTransition = SceneTransition.Find();
         continueButton.interactable = PlayerPrefs.HasKey("scene");
-        mainVolumeSlider.value = PlayerPrefs.GetFloat("volumeMain", 1f);
-        voiceVolumeSlider.value = PlayerPrefs.GetFloat("volumeVoice", 1f);
 
-#if UNITY_EDITOR || UNITY_STANDALONE
-        quitButton.SetActive(true);
+#if !(UNITY_EDITOR || UNITY_STANDALONE)
+        quitButton.SetActive(false);
 #endif
     }
 
@@ -60,13 +55,13 @@ public class MenuManager : MonoBehaviour
         var selected = eventSystem.currentSelectedGameObject;
         if (selected != null)
         {
-            Vector3 pos = flashlightTransform.position;
+            Vector3 pos = slideTransform.localPosition;
             pos.y = Mathf.Lerp(
                 pos.y,
-                selected.transform.position.y,
-                flashlightLerpSpeed * Time.deltaTime
+                selected.transform.localPosition.y,
+                slideLerpSpeed * Time.deltaTime
             );
-            flashlightTransform.position = pos;
+            slideTransform.localPosition = pos;
         }
     }
 
@@ -81,35 +76,8 @@ public class MenuManager : MonoBehaviour
         sceneTransition.GotoScene(savedScene);
     }
 
-    public void OnPressedOpenSettings()
-    {
-        mainPanel.SetActive(false);
-        settingsPanel.SetActive(true);
-    }
-
-    public void OnPressedCloseSettings()
-    {
-        mainPanel.SetActive(true);
-        settingsPanel.SetActive(false);
-        PlayerPrefs.Save();
-    }
-
     public void OnPressedQuit()
     {
         Application.Quit();
-    }
-
-    public void OnMainVolumeChanged()
-    {
-        var vol = mainVolumeSlider.value;
-        mixer.SetFloat("Main Volume", Mathf.Lerp(-80f, 0f, vol));
-        PlayerPrefs.SetFloat("volumeMain", vol);
-    }
-
-    public void OnVoiceVolumeChanged()
-    {
-        var vol = voiceVolumeSlider.value;
-        mixer.SetFloat("Voice Volume", Mathf.Lerp(-80f, 0f, vol));
-        PlayerPrefs.SetFloat("volumeVoice", vol);
     }
 }
