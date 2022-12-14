@@ -15,7 +15,8 @@ public class MenuManager : MonoBehaviour
     [Header("Controls")]
     public Button continueButton;
     public GameObject quitButton;
-    public Slider volumeSlider;
+    public Slider mainVolumeSlider;
+    public Slider voiceVolumeSlider;
 
     [Header("Flashlight")]
     public RectTransform flashlightTransform;
@@ -30,7 +31,8 @@ public class MenuManager : MonoBehaviour
     {
         sceneTransition = SceneTransition.Find();
         continueButton.interactable = PlayerPrefs.HasKey("scene");
-        volumeSlider.value = PlayerPrefs.GetFloat("volume", 1f);
+        mainVolumeSlider.value = PlayerPrefs.GetFloat("volumeMain", 1f);
+        voiceVolumeSlider.value = PlayerPrefs.GetFloat("volumeVoice", 1f);
 
 #if UNITY_EDITOR || UNITY_STANDALONE
         quitButton.SetActive(true);
@@ -97,10 +99,17 @@ public class MenuManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void OnVolumeChanged()
+    public void OnMainVolumeChanged()
     {
-        var vol = volumeSlider.value;
-        mixer.SetFloat("Volume", Mathf.Lerp(-80f, 0f, vol));
-        PlayerPrefs.SetFloat("volume", vol);
+        var vol = mainVolumeSlider.value;
+        mixer.SetFloat("Main Volume", Mathf.Lerp(-80f, 0f, vol));
+        PlayerPrefs.SetFloat("volumeMain", vol);
+    }
+
+    public void OnVoiceVolumeChanged()
+    {
+        var vol = voiceVolumeSlider.value;
+        mixer.SetFloat("Voice Volume", Mathf.Lerp(-80f, 0f, vol));
+        PlayerPrefs.SetFloat("volumeVoice", vol);
     }
 }
