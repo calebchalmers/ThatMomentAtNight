@@ -5,7 +5,11 @@ using System.Linq;
 
 public class Car : MonoBehaviour
 {
-    public float linearSpeed = 12f;
+    public float minSpeed = 5f;
+    public float maxSpeed = 30f;
+    public float accel = 1.2f;
+    public float brakeDecel = 4f;
+    public float crashDecel = 20f;
     public float maxTurnAngle = 15f;
     public float turnSpeed = 150f;
     public float restartDelay = 1.0f;
@@ -18,6 +22,7 @@ public class Car : MonoBehaviour
     private float wheelAngle = 0f;
     private float frontWheelDistance;
     private float inputDir = 0f;
+    private float speed = 0f;
 
     [Header("Auto-correction")]
     public Transform[] lanes;
@@ -42,14 +47,16 @@ public class Car : MonoBehaviour
 
     void FixedUpdate()
     {
+        float dt = Time.fixedDeltaTime;
         float carAngle = rb.rotation;
         Vector3 pos = rb.position;
+        float effTurnSpeed = turnSpeed / speed; // better handling
 
         bool turning = inputDir != 0f;
 
         if (turning)
         {
-            float angleVel = inputDir * turnSpeed * Time.fixedDeltaTime;
+            float angleVel = inputDir * effTurnSpeed * dt;
             wheelAngle = Mathf.Clamp(wheelAngle + angleVel + carAngle, -maxTurnAngle, maxTurnAngle) - carAngle;
         }
         else
@@ -62,21 +69,34 @@ public class Car : MonoBehaviour
             );
 
             float diff = targetAngle - (carAngle + wheelAngle);
-            float delta = Mathf.Sign(diff) * Mathf.Min(Mathf.Abs(diff), turnSpeed * Time.fixedDeltaTime);
+            float delta = Mathf.Sign(diff) * Mathf.Min(Mathf.Abs(diff), effTurnSpeed * dt);
             wheelAngle += delta;
         }
 
         float globalTurnAngle = (wheelAngle + carAngle) * Mathf.Deg2Rad;
 
         Vector3 turnDir = new Vector3(Mathf.Sin(globalTurnAngle), -Mathf.Cos(globalTurnAngle), 0f);
-        // Vector3 turnDir = new Vector3(Mathf.Sin(globalTurnAngle), -Mathf.Cos(globalTurnAngle), 0f);
-        Vector3 pretend = pos + new Vector3(Mathf.Sin(carAngle * Mathf.Deg2Rad), -Mathf.Cos(carAngle * Mathf.Deg2Rad), 0f) * frontWheelDistance + turnDir * linearSpeed * Time.fixedDeltaTime;
+        // Vector3 turnDir = new Vector3(Mathf.Tan(globalTurnAngle), -1f, 0f);
+        Vector3 pretend = pos + turnDir * speed * dt + frontWheelDistance *
+            new Vector3(Mathf.Sin(carAngle * Mathf.Deg2Rad), -Mathf.Cos(carAngle * Mathf.Deg2Rad), 0f);
         Vector3 carDir = (pretend - pos).normalized;
         pos = pretend - carDir * frontWheelDistance;
         carAngle = Mathf.Atan2(carDir.x, -carDir.y) * Mathf.Rad2Deg;
 
         rb.MoveRotation(carAngle);
         rb.MovePosition(pos);
+
+        // Accelerate/decelerate
+        if (crashed)
+        {
+            speed = Mathf.Max(0.0f, speed - crashDecel * dt);
+        }
+        else
+        {
+            bool isBraking = Input.GetKey(KeyCode.W);
+            speed += (isBraking ? -brakeDecel : accel) * dt;
+            speed = Mathf.Clamp(speed, minSpeed, maxSpeed);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -88,7 +108,7 @@ public class Car : MonoBehaviour
         else if (!crashed)
         {
             crashed = true;
-            linearSpeed *= 0.5f;
+            speed *= 0.5f;
             crashSound.SetActive(true);
             Invoke("RestartScene", restartDelay);
         }
@@ -124,5 +144,10 @@ public class Car : MonoBehaviour
     public bool HasCrashed()
     {
         return crashed;
+    }
+
+    public float Speed()
+    {
+        return speed;
     }
 }

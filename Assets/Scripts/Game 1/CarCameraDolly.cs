@@ -6,12 +6,7 @@ public class CarCameraDolly : MonoBehaviour
 {
     public Car car;
 
-    private float crashSpeed;
-
-    void Start()
-    {
-        crashSpeed = car.linearSpeed;
-    }
+    private float lastSpeed = 0f;
 
     void LateUpdate()
     {
@@ -19,12 +14,14 @@ public class CarCameraDolly : MonoBehaviour
 
         if (car.HasCrashed())
         {
-            pos.y -= crashSpeed * Time.deltaTime;
+            pos.y -= lastSpeed * Time.deltaTime;
         }
         else
         {
+            lastSpeed = car.Speed();
             pos.y = car.transform.position.y;
         }
+        pos.y = car.transform.position.y;
 
         transform.position = pos;
     }
