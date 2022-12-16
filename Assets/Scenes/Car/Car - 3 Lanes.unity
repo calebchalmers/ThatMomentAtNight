@@ -1439,6 +1439,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 390146621712633687, guid: b413531ab1a8ec3f2bac8196c9dc1415, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8933020755123652936, guid: b413531ab1a8ec3f2bac8196c9dc1415, type: 3}
       propertyPath: m_Name
       value: Camera Dolly

@@ -5,15 +5,16 @@ using TMPro;
 
 public class CarSpeedText : MonoBehaviour
 {
-    public Car car;
     public float scale = 1f;
     public string format = "0";
 
-    private TextMeshProUGUI text;
+    private Car car;
+    private TextMeshPro text;
 
     void Start()
     {
-        text = GetComponent<TextMeshProUGUI>();
+        car = FindObjectOfType<Car>();
+        text = GetComponent<TextMeshPro>();
     }
 
     void LateUpdate()
