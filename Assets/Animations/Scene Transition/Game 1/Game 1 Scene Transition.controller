@@ -82,7 +82,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Game 2 Scene Transition
+  m_Name: Game 1 Scene Transition
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: next
