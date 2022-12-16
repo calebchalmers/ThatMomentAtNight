@@ -12,17 +12,23 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: a902248df3f97909bb096142ef6f8c03
   - enabled: 1
-    path: Assets/Scenes/Car/Car 1.unity
+    path: Assets/Scenes/Car/Car - 3 Lanes.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Memories/Memory Placeholder.unity
-    guid: 1ecb8a783986d695096ef499e7fc1856
+    path: Assets/Scenes/Memories/Tea.unity
+    guid: 1d8bd8c938bdb76c399bb74553c5fae1
   - enabled: 1
-    path: Assets/Scenes/Car/Car 2.unity
+    path: Assets/Scenes/Car/Car - 2 Lanes.unity
     guid: a807e69bf9ce11dbfb58600665c43355
   - enabled: 1
-    path: Assets/Scenes/Car/Car 3.unity
+    path: Assets/Scenes/Memories/Chime.unity
+    guid: 1ecb8a783986d695096ef499e7fc1856
+  - enabled: 1
+    path: Assets/Scenes/Car/Car - 1 Lane.unity
     guid: 6fed6e3c4c64492cdbf541a452c69e83
+  - enabled: 1
+    path: Assets/Scenes/Memories/Medication.unity
+    guid: 7623b08b0c2d1e71b90198d5e1cf8f9b
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 143321d07b32de3ddb98df82b7a2a809
