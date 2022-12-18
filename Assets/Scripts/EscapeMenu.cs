@@ -8,11 +8,20 @@ using UnityEngine.UI;
 
 public class EscapeMenu : MonoBehaviour
 {
+    public bool showOnStart = false;
     public GameObject menu;
     public AudioMixer mixer;
     public Toggle toggleVoice;
     public Toggle toggleSfx;
     public Toggle toggleMusic;
+
+    void Start()
+    {
+        if (showOnStart)
+        {
+            menu.SetActive(true);
+        }
+    }
 
     void Update()
     {
@@ -40,5 +49,15 @@ public class EscapeMenu : MonoBehaviour
     public void OnToggleMusic()
     {
         mixer.SetFloat("Music Volume", Volume(toggleMusic.isOn));
+    }
+
+    public void ExitToMenu()
+    {
+        SceneTransition.Find().GotoScene(1);
+    }
+
+    public bool IsShowing()
+    {
+        return menu.activeSelf;
     }
 }
