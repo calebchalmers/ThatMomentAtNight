@@ -22,7 +22,7 @@ EditorBuildSettings:
     guid: a807e69bf9ce11dbfb58600665c43355
   - enabled: 1
     path: Assets/Scenes/Memories/Chime.unity
-    guid: 1ecb8a783986d695096ef499e7fc1856
+    guid: f9d455c22e5c7962ea076cc697532d64
   - enabled: 1
     path: Assets/Scenes/Car/Car - 1 Lane.unity
     guid: 6fed6e3c4c64492cdbf541a452c69e83
