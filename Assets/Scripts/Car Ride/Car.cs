@@ -5,6 +5,7 @@ using System.Linq;
 
 public class Car : MonoBehaviour
 {
+    public float speed = 0f;
     public float minSpeed = 5f;
     public float maxSpeed = 30f;
     public float accel = 1.2f;
@@ -24,7 +25,6 @@ public class Car : MonoBehaviour
     private float wheelAngle = 0f;
     private float frontWheelDistance;
     private float inputDir = 0f;
-    private float speed = 0f;
 
     [Header("Auto-correction")]
     public Transform[] lanes;
