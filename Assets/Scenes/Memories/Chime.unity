@@ -242,6 +242,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7619362297781566896, guid: d9e94154aac2a6aa6864a5447b503edc, type: 3}
+      propertyPath: saveProgress
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7619362297781566897, guid: d9e94154aac2a6aa6864a5447b503edc, type: 3}
       propertyPath: m_Name
       value: Scene Transition
