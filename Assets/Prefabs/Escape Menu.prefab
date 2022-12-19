@@ -1732,7 +1732,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 764119987666455599}
         m_TargetAssemblyTypeName: EscapeMenu, Assembly-CSharp
-        m_MethodName: ExitToMenu
+        m_MethodName: Resume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

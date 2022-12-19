@@ -19,7 +19,7 @@ public class EscapeMenu : MonoBehaviour
     {
         if (showOnStart)
         {
-            menu.SetActive(true);
+            SetShowing(true);
         }
     }
 
@@ -27,7 +27,7 @@ public class EscapeMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            menu.SetActive(!menu.activeSelf);
+            SetShowing(!IsShowing());
         }
     }
 
@@ -51,9 +51,19 @@ public class EscapeMenu : MonoBehaviour
         mixer.SetFloat("Music Volume", Volume(toggleMusic.isOn));
     }
 
+    public void Resume()
+    {
+        SetShowing(false);
+    }
+
     public void ExitToMenu()
     {
         SceneTransition.Find().GotoScene(1);
+    }
+
+    public void SetShowing(bool show)
+    {
+        menu.SetActive(show);
     }
 
     public bool IsShowing()
