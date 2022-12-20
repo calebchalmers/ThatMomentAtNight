@@ -14,7 +14,7 @@ public class Radio : MonoBehaviour
 
     void Start()
     {
-        ChangeSong(songIndex);
+        ChangeSong(songIndex, false);
     }
 
     void Update()
@@ -25,12 +25,13 @@ public class Radio : MonoBehaviour
         }
     }
 
-    private void ChangeSong(int index)
+    private void ChangeSong(int index, bool makeNoise = true)
     {
         songIndex = index;
         text.text = titles[index];
 
-        noiseSource.Play();
+        if (makeNoise)
+            noiseSource.Play();
 
         songSource.Stop();
         songSource.clip = songs[index];
