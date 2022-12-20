@@ -6,20 +6,24 @@ using TMPro;
 public class Dialog : MonoBehaviour
 {
     public float charsPerSec = 10f;
+    public float skipRate = 4f;
     public float fadeTime = 0.5f;
     public float waitTime = 0.5f;
+    public bool changeSceneAfter = false;
 
     public string[] lines;
     public TextMeshPro text;
     public TextAnimation textAnimation;
 
+    private SceneTransition sceneTransition;
     private EscapeMenu escapeMenu;
     private Animator animator;
-    public int lineIndex = -1;
-    public bool animating = false;
+    private int lineIndex = -1;
+    private bool animating = false;
 
     void Start()
     {
+        sceneTransition = SceneTransition.Find();
         escapeMenu = FindObjectOfType<EscapeMenu>();
         animator = GetComponent<Animator>();
 
@@ -43,7 +47,7 @@ public class Dialog : MonoBehaviour
 
         if (lineIndex == lines.Length)
         {
-            End();
+            StartClosing();
         }
         else
         {
@@ -52,13 +56,26 @@ public class Dialog : MonoBehaviour
         }
     }
 
-    private void End()
+    private void StartClosing()
     {
-        animator.enabled = true;
         this.enabled = false;
+
+        if (changeSceneAfter)
+        {
+            sceneTransition.NextScene();
+            return;
+        }
+
+        animator.enabled = true;
+        animator.SetBool("end", true);
     }
 
-    private void UnlockInput()
+    private void OnReady()
+    {
+        animator.enabled = false;
+    }
+
+    private void OnClosed()
     {
         InputLocker.Unlock("Dialog");
     }
@@ -73,7 +90,8 @@ public class Dialog : MonoBehaviour
 
         while (true)
         {
-            textAnimation.progress += Time.deltaTime / charCount * charsPerSec;
+            float skipTerm = Input.GetButton("Advance Memory") ? skipRate : 1f;
+            textAnimation.progress += Time.deltaTime / charCount * charsPerSec * skipTerm;
 
             if (textAnimation.progress >= 1f)
                 break;

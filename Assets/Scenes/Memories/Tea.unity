@@ -153,7 +153,7 @@ Transform:
   m_Children:
   - {fileID: 813099906}
   m_Father: {fileID: 559923330}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &425799982
 GameObject:
@@ -272,7 +272,7 @@ Transform:
   - {fileID: 425799983}
   - {fileID: 1793899041}
   m_Father: {fileID: 559923330}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &559923329
 GameObject:
@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 559923331}
   - component: {fileID: 559923332}
   m_Layer: 0
-  m_Name: Scene
+  m_Name: Memory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -304,12 +304,13 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1740167180}
   - {fileID: 339252200}
   - {fileID: 537806576}
   - {fileID: 779853996}
   - {fileID: 1099249428}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &559923331
 Animator:
@@ -447,7 +448,7 @@ Transform:
   - {fileID: 1328668816}
   - {fileID: 1067002103}
   m_Father: {fileID: 559923330}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &792511634
 GameObject:
@@ -819,7 +820,7 @@ Transform:
   m_Children:
   - {fileID: 1895758868}
   m_Father: {fileID: 559923330}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -14.99}
 --- !u!1 &1186642972
 GameObject:
@@ -903,7 +904,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1328668815
 GameObject:
@@ -994,7 +995,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 559923330}
     m_Modifications:
     - target: {fileID: 286695411410840715, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
       propertyPath: m_Name
@@ -1002,7 +1003,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 286695411410840716, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 286695411410840716, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1022,15 +1023,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 286695411410840716, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 286695411410840716, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 286695411410840716, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 286695411410840716, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1044,8 +1045,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 286695411410840717, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
+      propertyPath: lines.Array.data[0]
+      value: Even in the silent embrace of the night, my mind seems to drift into
+        dark caverns.
+      objectReference: {fileID: 0}
+    - target: {fileID: 286695411410840717, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
+      propertyPath: lines.Array.data[1]
+      value: My thoughts are but haunting echoes as I lose myself down endless pathways.
+      objectReference: {fileID: 0}
+    - target: {fileID: 286695411410840717, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
+      propertyPath: lines.Array.data[2]
+      value: "Taking a sip, my stomach yearned for a warm embrace. However\u2026the
+        sweet liquid had become cold. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 286695411474255986, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 286695411474255986, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 16777215
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
+--- !u!4 &1740167180 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 286695411410840716, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
+  m_PrefabInstance: {fileID: 1740167179}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1793899040
 GameObject:
   m_ObjectHideFlags: 0

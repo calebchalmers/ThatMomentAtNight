@@ -1684,6 +1684,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 286695411410840717, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
+      propertyPath: lines.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 286695411410840717, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
+      propertyPath: lines.Array.data[0]
+      value: My eyes closed around the endless universe.
+      objectReference: {fileID: 0}
+    - target: {fileID: 286695411410840717, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
+      propertyPath: lines.Array.data[1]
+      value: When is the world going to change?
+      objectReference: {fileID: 0}
+    - target: {fileID: 286695411410840717, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
+      propertyPath: lines.Array.data[2]
+      value: I wish to leave this mundane world that surrounds me with dull smiles.
+      objectReference: {fileID: 0}
+    - target: {fileID: 286695411410840717, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
+      propertyPath: lines.Array.data[3]
+      value: 'To then be surrounded by possibilities and dreams no one  will ever
+        understand fully but myself. '
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
 --- !u!1001 &4629913304198555733

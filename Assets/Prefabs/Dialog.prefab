@@ -215,17 +215,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de71f376cd48f263686b75c4d1d26ef9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charsPerSec: 15
+  charsPerSec: 24
+  skipRate: 5
   fadeTime: 0.2
   waitTime: 0.3
+  changeSceneAfter: 0
   lines:
   - hi this is a dialog message haha hehe
   - wow this is craaazy!
   - uwu *nya*
   text: {fileID: 286695411474255986}
   textAnimation: {fileID: 286695411474255988}
-  lineIndex: -1
-  animating: 0
 --- !u!95 &286695411410840718
 Animator:
   serializedVersion: 4
@@ -234,7 +234,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 286695411410840715}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 5ed0f0e0dbada10efa8adca22e661549, type: 2}
   m_CullingMode: 0
@@ -374,7 +374,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 10
+  m_fontSize: 8
   m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
@@ -410,7 +410,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0.5, y: 0.2, z: 0.5, w: 0.2}
+  m_margin: {x: 0.5, y: 0.25, z: 0.5, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
