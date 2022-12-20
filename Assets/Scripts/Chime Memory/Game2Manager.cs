@@ -11,10 +11,12 @@ public class Game2Manager : MonoBehaviour
 
     private int starsClicked = 0;
     private SceneTransition sceneTransition;
+    private EscapeMenu escapeMenu;
 
     void Start()
     {
         sceneTransition = SceneTransition.Find();
+        escapeMenu = FindObjectOfType<EscapeMenu>();
 
         stars[0].gameObject.SetActive(true);
         stars[1].gameObject.SetActive(true);
@@ -23,14 +25,17 @@ public class Game2Manager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (!escapeMenu.IsShowing())
         {
-            CheckStars();
-        }
+            if (Input.GetMouseButtonDown(0))
+            {
+                CheckStars();
+            }
 
-        if (Input.GetButtonDown("Advance Memory"))
-        {
-            ClickedStar(stars[starsClicked]);
+            if (Input.GetButtonDown("Advance Memory"))
+            {
+                ClickedStar(stars[starsClicked]);
+            }
         }
     }
 
