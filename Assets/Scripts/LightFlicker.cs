@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class LightFlicker : MonoBehaviour
 {
-    public GameObject lightObject;
-    public float chance = 0.1f;
-    public float duration = 0.1f;
-
-    void Start()
-    {
-
-    }
+    public SpriteRenderer lightRenderer;
+    public float chance = 0.25f;
+    public float duration = 0.03f;
+    public float regularOpacity = 1f;
+    public float fickerOpacity = 0.8f;
 
     void Update()
     {
@@ -23,8 +20,11 @@ public class LightFlicker : MonoBehaviour
 
     IEnumerator Flicker()
     {
-        lightObject.SetActive(false);
+        Color color = lightRenderer.color;
+        color.a = fickerOpacity;
+        lightRenderer.color = color;
         yield return new WaitForSeconds(duration);
-        lightObject.SetActive(true);
+        color.a = regularOpacity;
+        lightRenderer.color = color;
     }
 }

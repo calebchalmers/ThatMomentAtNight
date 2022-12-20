@@ -74,6 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd514a44d07b3d165997dbf163b0ffdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
   minSpeed: 8
   maxSpeed: 30
   accel: 0.4
@@ -558,6 +559,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7912534490197140345}
   - component: {fileID: 7912534490197140344}
+  - component: {fileID: 1254659880695475372}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -633,6 +635,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1254659880695475372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7912534490197140346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 461e26a87af6cf984b04045887e95ec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightRenderer: {fileID: 7912534491031476993}
+  chance: 0.5
+  duration: 0.05
+  regularOpacity: 0.5372549
+  fickerOpacity: 0.4298039
 --- !u!1 &7912534490669368429
 GameObject:
   m_ObjectHideFlags: 0

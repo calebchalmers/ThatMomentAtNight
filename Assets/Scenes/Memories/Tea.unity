@@ -1056,8 +1056,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 286695411410840717, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
       propertyPath: lines.Array.data[2]
-      value: "Taking a sip, my stomach yearned for a warm embrace. However\u2026the
-        sweet liquid had become cold. "
+      value: 'Taking a sip, my stomach yearned for a warm embrace. However... the
+        sweet liquid had become cold. '
       objectReference: {fileID: 0}
     - target: {fileID: 286695411474255986, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
       propertyPath: m_fontSizeBase
