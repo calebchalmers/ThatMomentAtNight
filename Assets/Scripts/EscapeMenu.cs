@@ -25,7 +25,7 @@ public class EscapeMenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetButtonDown("Menu"))
         {
             SetShowing(!IsShowing());
         }

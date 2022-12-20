@@ -28,7 +28,7 @@ public class Game2Manager : MonoBehaviour
             CheckStars();
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetButtonDown("Advance Memory"))
         {
             ClickedStar(stars[starsClicked]);
         }

@@ -15,7 +15,7 @@ public class Memory : MonoBehaviour
 
     void Update()
     {
-        animator.SetBool("continue", Input.GetKeyDown(KeyCode.Space));
+        animator.SetBool("continue", Input.GetButtonDown("Advance Memory"));
     }
 
     public void EndScene()

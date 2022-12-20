@@ -103,7 +103,7 @@ public class Car : MonoBehaviour
         }
         else
         {
-            bool isBraking = Input.GetKey(KeyCode.W);
+            bool isBraking = Input.GetButton("Brake");
             speed += (isBraking ? -brakeDecel : accel) * dt;
             speed = Mathf.Clamp(speed, minSpeed, maxSpeed);
         }
