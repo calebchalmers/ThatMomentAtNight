@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Star : MonoBehaviour
 {
+    public GameObject soundObj;
     public bool isReady = false;
 
     private Animator animator;
@@ -22,6 +23,7 @@ public class Star : MonoBehaviour
 
     public void OnClick()
     {
+        soundObj.SetActive(true);
         animator.SetBool("clicked", true);
         animator.SetBool("ready", false);
         isReady = false;

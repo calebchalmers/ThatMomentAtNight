@@ -6,8 +6,11 @@ using TMPro;
 public class Radio : MonoBehaviour
 {
     public string[] titles;
+    public AudioClip[] songs;
     public int songIndex = 0;
     public TextMeshPro text;
+    public AudioSource songSource;
+    public AudioSource noiseSource;
 
     void Start()
     {
@@ -26,5 +29,11 @@ public class Radio : MonoBehaviour
     {
         songIndex = index;
         text.text = titles[index];
+
+        noiseSource.Play();
+
+        songSource.Stop();
+        songSource.clip = songs[index];
+        songSource.Play();
     }
 }

@@ -1702,7 +1702,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 286695411410840717, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
       propertyPath: lines.Array.data[3]
-      value: 'To then be surrounded by possibilities and dreams no one  will ever
+      value: 'To then be surrounded by possibilities and dreams no one will ever
         understand fully but myself. '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
