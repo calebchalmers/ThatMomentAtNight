@@ -14,6 +14,11 @@ public class Animal : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         car = FindObjectOfType<Car>();
+
+        if (Random.value > 0.5f)
+        {
+            transform.localScale = new Vector3(-1f, 1f, 1f);
+        }
     }
 
     void Update()
