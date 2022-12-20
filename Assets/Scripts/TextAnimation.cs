@@ -25,6 +25,11 @@ public class TextAnimation : MonoBehaviour
 
     void Update()
     {
+        UpdateText();
+    }
+
+    private void UpdateText()
+    {
         float n = text.Length;
         float t = progress * ((n - 1) / fadeChars + 1);
 
@@ -37,5 +42,11 @@ public class TextAnimation : MonoBehaviour
             newText += $"<alpha=#{h:X2}>{c}";
         }
         mesh.text = newText;
+    }
+
+    public void ChangeText(string newText)
+    {
+        text = newText;
+        UpdateText();
     }
 }

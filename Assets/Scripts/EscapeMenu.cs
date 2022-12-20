@@ -64,6 +64,15 @@ public class EscapeMenu : MonoBehaviour
     public void SetShowing(bool show)
     {
         menu.SetActive(show);
+
+        if (show)
+        {
+            InputLocker.Lock("EscapeMenu");
+        }
+        else
+        {
+            InputLocker.Unlock("EscapeMenu");
+        }
     }
 
     public bool IsShowing()

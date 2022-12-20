@@ -18,7 +18,6 @@ public class Car : MonoBehaviour
     public Transform frontWheels;
 
     private SceneTransition sceneTransition;
-    private EscapeMenu escapeMenu;
     private Rigidbody2D rb;
     private bool crashed = false;
     private bool inputLocked;
@@ -34,7 +33,6 @@ public class Car : MonoBehaviour
     void Start()
     {
         sceneTransition = SceneTransition.Find();
-        escapeMenu = FindObjectOfType<EscapeMenu>();
         rb = GetComponent<Rigidbody2D>();
         frontWheelDistance = frontWheels.localPosition.magnitude;
     }
@@ -46,13 +44,11 @@ public class Car : MonoBehaviour
         Vector3 wheelEuler = frontWheels.localEulerAngles;
         wheelEuler.z = wheelAngle;
         frontWheels.localEulerAngles = wheelEuler;
-
-        inputLocked = escapeMenu.IsShowing();
     }
 
     void FixedUpdate()
     {
-        if (inputLocked)
+        if (InputLocker.IsLocked)
         {
             return;
         }
