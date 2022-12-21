@@ -12,9 +12,11 @@ public class Dialog : MonoBehaviour
     public bool changeSceneAfter = false;
 
     public string[] lines;
+    public AudioClip[] voiceClips;
     public TextMeshPro text;
     public TextAnimation textAnimation;
 
+    private AudioSource audioSource;
     private SceneTransition sceneTransition;
     private EscapeMenu escapeMenu;
     private Animator animator;
@@ -23,6 +25,7 @@ public class Dialog : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         sceneTransition = SceneTransition.Find();
         escapeMenu = FindObjectOfType<EscapeMenu>();
         animator = GetComponent<Animator>();
@@ -121,6 +124,7 @@ public class Dialog : MonoBehaviour
 
         SetOpacity(0f);
         yield return new WaitForSeconds(waitTime);
+        audioSource.PlayOneShot(voiceClips[lineIndex]);
         StartCoroutine("AnimateTextProgress");
     }
 

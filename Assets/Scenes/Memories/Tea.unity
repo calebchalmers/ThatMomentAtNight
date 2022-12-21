@@ -1059,6 +1059,22 @@ PrefabInstance:
       value: 'Taking a sip, my stomach yearned for a warm embrace. However... the
         sweet liquid had become cold. '
       objectReference: {fileID: 0}
+    - target: {fileID: 286695411410840717, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
+      propertyPath: voiceClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 286695411410840717, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
+      propertyPath: voiceClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: cc0eb037856eb2a71831555e6ed42e0d, type: 3}
+    - target: {fileID: 286695411410840717, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
+      propertyPath: voiceClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6bad3ccf05afff9d5b73f749165d0365, type: 3}
+    - target: {fileID: 286695411410840717, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
+      propertyPath: voiceClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: b73a4c4b9c2efc29abba66ffa22fd2f2, type: 3}
     - target: {fileID: 286695411474255986, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
       propertyPath: m_fontSizeBase
       value: 8

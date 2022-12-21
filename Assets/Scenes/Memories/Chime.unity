@@ -1702,9 +1702,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 286695411410840717, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
       propertyPath: lines.Array.data[3]
-      value: 'To then be surrounded by possibilities and dreams no one will ever
-        understand fully but myself. '
+      value: 'To then be surrounded by possibilities and dreams no one can ever understand
+        fully but myself. '
       objectReference: {fileID: 0}
+    - target: {fileID: 286695411410840717, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
+      propertyPath: voiceClips.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 286695411410840717, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
+      propertyPath: voiceClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 776beb4fff1a8473bb5c0e018c2b6b7c, type: 3}
+    - target: {fileID: 286695411410840717, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
+      propertyPath: voiceClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 720d1e3c2712eda0d8973cb27620b5ee, type: 3}
+    - target: {fileID: 286695411410840717, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
+      propertyPath: voiceClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 36796f32ed7f8d8d990f5e8e85f9b9ed, type: 3}
+    - target: {fileID: 286695411410840717, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
+      propertyPath: voiceClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 749aab6c63faf84b18d6052a1fba200d, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
 --- !u!1001 &4629913304198555733

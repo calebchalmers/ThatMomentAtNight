@@ -5347,6 +5347,14 @@ PrefabInstance:
       propertyPath: lines.Array.data[0]
       value: Routine. Each moment repeating like breaths of air.
       objectReference: {fileID: 0}
+    - target: {fileID: 286695411410840717, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
+      propertyPath: voiceClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 286695411410840717, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
+      propertyPath: voiceClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 970e62daf5259cfb89b5da949840133c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
 --- !u!1001 &622548202
@@ -10788,6 +10796,26 @@ PrefabInstance:
       propertyPath: lines.Array.data[3]
       value: "It hurts to wonder if I\u2019m even breathing..."
       objectReference: {fileID: 0}
+    - target: {fileID: 286695411410840717, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
+      propertyPath: voiceClips.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 286695411410840717, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
+      propertyPath: voiceClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: c82a20ded6ff2d642baf8197fa7f47ff, type: 3}
+    - target: {fileID: 286695411410840717, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
+      propertyPath: voiceClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: f0c3a9706028266d29b351860b074803, type: 3}
+    - target: {fileID: 286695411410840717, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
+      propertyPath: voiceClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: eb11e895a7be02cadb0167f86585824c, type: 3}
+    - target: {fileID: 286695411410840717, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
+      propertyPath: voiceClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4ab364d98da9b2e42bc137e64e061110, type: 3}
     - target: {fileID: 286695411474255986, guid: 593e37e13b2b888e1b01b180b75fab34, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 16777215
