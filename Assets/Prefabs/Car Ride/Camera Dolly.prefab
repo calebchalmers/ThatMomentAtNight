@@ -841,10 +841,12 @@ MonoBehaviour:
   - Katamari
   - "Sue\xF1o"
   - Hop home
+  - Abyss
   songs:
   - {fileID: 8300000, guid: 5a5126cdd1d1a3c2da93d4a7abcadfc5, type: 3}
   - {fileID: 8300000, guid: 8c1b2eb6f83c4b657b8b4e372dc9072a, type: 3}
   - {fileID: 8300000, guid: db55ef09a4060dc6ca8b74f72835e6ec, type: 3}
+  - {fileID: 8300000, guid: c57a632f7e7db56bc8bc1c18365a586a, type: 3}
   songIndex: 0
   text: {fileID: 8520669608908411348}
   songSource: {fileID: 4466960202762642982}
