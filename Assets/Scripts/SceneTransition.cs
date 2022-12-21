@@ -25,6 +25,14 @@ public class SceneTransition : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if (Input.GetButtonDown("Skip Scene"))
+        {
+            NextScene();
+        }
+    }
+
     private int GetCurrentScene()
     {
         return SceneManager.GetActiveScene().buildIndex;
