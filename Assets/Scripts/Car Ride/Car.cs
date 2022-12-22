@@ -20,7 +20,6 @@ public class Car : MonoBehaviour
     [Header("Crash")]
     public int crashSceneIndex;
     public GameObject crashSound;
-    public AudioMixer audioMixer;
     public AudioMixerSnapshot crashMixerSnapshot;
 
     private SceneTransition sceneTransition;
@@ -125,7 +124,6 @@ public class Car : MonoBehaviour
             speed *= 0.5f;
             crashSound.SetActive(true);
             animator.SetBool("crashed", true);
-            // audioMixer.TransitionToSnapshots(new AudioMixerSnapshot[] { crashMixerSnapshot }, new float[] { 1.0f }, 0.25f);
             Invoke("RestartScene", restartDelay);
         }
     }

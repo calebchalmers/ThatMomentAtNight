@@ -14,7 +14,8 @@ public class Radio : MonoBehaviour
 
     void Start()
     {
-        ChangeSong(songIndex, false);
+        int index = PlayerPrefs.GetInt("radio_song", songIndex);
+        ChangeSong(index, false);
     }
 
     void Update()
@@ -36,5 +37,7 @@ public class Radio : MonoBehaviour
         songSource.Stop();
         songSource.clip = songs[index];
         songSource.Play();
+
+        PlayerPrefs.SetInt("radio_song", index);
     }
 }
