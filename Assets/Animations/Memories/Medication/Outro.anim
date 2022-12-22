@@ -41,10 +41,10 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_IsActive
+    attribute: m_Enabled
     path: Dialog B
-    classID: 1
-    script: {fileID: 0}
+    classID: 114
+    script: {fileID: 11500000, guid: de71f376cd48f263686b75c4d1d26ef9, type: 3}
   m_PPtrCurves: []
   m_SampleRate: 60
   m_WrapMode: 0
@@ -55,10 +55,10 @@ AnimationClip:
     genericBindings:
     - serializedVersion: 2
       path: 1782211093
-      attribute: 2086281974
-      script: {fileID: 0}
-      typeID: 1
-      customType: 0
+      attribute: 3305885265
+      script: {fileID: 11500000, guid: de71f376cd48f263686b75c4d1d26ef9, type: 3}
+      typeID: 114
+      customType: 24
       isPPtrCurve: 0
     pptrCurveMapping: []
   m_AnimationClipSettings:
@@ -106,10 +106,10 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_IsActive
+    attribute: m_Enabled
     path: Dialog B
-    classID: 1
-    script: {fileID: 0}
+    classID: 114
+    script: {fileID: 11500000, guid: de71f376cd48f263686b75c4d1d26ef9, type: 3}
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0

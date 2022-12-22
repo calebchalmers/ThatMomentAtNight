@@ -30,6 +30,7 @@ public class Dialog : MonoBehaviour
         escapeMenu = FindObjectOfType<EscapeMenu>();
         animator = GetComponent<Animator>();
 
+        animator.SetBool("start", true);
         InputLocker.Lock("Dialog");
         NextLine();
     }
