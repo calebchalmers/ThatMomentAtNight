@@ -1587,8 +1587,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7619362297781566896, guid: d9e94154aac2a6aa6864a5447b503edc, type: 3}
+      propertyPath: introClip
+      value: 
+      objectReference: {fileID: 7400000, guid: 6617429899424deadb62a65c9908b1c3, type: 2}
+    - target: {fileID: 7619362297781566896, guid: d9e94154aac2a6aa6864a5447b503edc, type: 3}
+      propertyPath: outroClip
+      value: 
+      objectReference: {fileID: 7400000, guid: 3afa90688bed125c0b2bf297c16c8dac, type: 2}
+    - target: {fileID: 7619362297781566896, guid: d9e94154aac2a6aa6864a5447b503edc, type: 3}
       propertyPath: saveProgress
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7619362297781566896, guid: d9e94154aac2a6aa6864a5447b503edc, type: 3}
+      propertyPath: introFadeDuration
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7619362297781566896, guid: d9e94154aac2a6aa6864a5447b503edc, type: 3}
+      propertyPath: outroFadeDuration
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7619362297781566897, guid: d9e94154aac2a6aa6864a5447b503edc, type: 3}
       propertyPath: m_Name

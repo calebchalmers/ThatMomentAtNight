@@ -47,7 +47,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextScene: 1
-  relative: 1
+  nextBehaviour: 0
+  saveProgress: 0
+  audioMixer: {fileID: 24100000, guid: 1aea27f3c8e123211b6f89486bc5e496, type: 2}
+  introFadeDuration: 0.2
+  outroFadeDuration: 0.2
 --- !u!95 &7619362297781566910
 Animator:
   serializedVersion: 4

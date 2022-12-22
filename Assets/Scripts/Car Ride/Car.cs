@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using System.Linq;
 
 public class Car : MonoBehaviour
@@ -14,11 +15,17 @@ public class Car : MonoBehaviour
     public float maxTurnAngle = 15f;
     public float turnSpeed = 150f;
     public float restartDelay = 1.0f;
-    public GameObject crashSound;
     public Transform frontWheels;
+
+    [Header("Crash")]
+    public int crashSceneIndex;
+    public GameObject crashSound;
+    public AudioMixer audioMixer;
+    public AudioMixerSnapshot crashMixerSnapshot;
 
     private SceneTransition sceneTransition;
     private Rigidbody2D rb;
+    private Animator animator;
     private bool crashed = false;
     private bool inputLocked;
     private float wheelAngle = 0f;
@@ -34,6 +41,7 @@ public class Car : MonoBehaviour
     {
         sceneTransition = SceneTransition.Find();
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         frontWheelDistance = frontWheels.localPosition.magnitude;
     }
 
@@ -116,13 +124,15 @@ public class Car : MonoBehaviour
             crashed = true;
             speed *= 0.5f;
             crashSound.SetActive(true);
+            animator.SetBool("crashed", true);
+            // audioMixer.TransitionToSnapshots(new AudioMixerSnapshot[] { crashMixerSnapshot }, new float[] { 1.0f }, 0.25f);
             Invoke("RestartScene", restartDelay);
         }
     }
 
     private void RestartScene()
     {
-        sceneTransition.RestartScene();
+        sceneTransition.GotoScene(crashSceneIndex);
     }
 
     private (int, float) ClosestLane(float x)

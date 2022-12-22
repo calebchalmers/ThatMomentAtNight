@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 143321d07b32de3ddb98df82b7a2a809
+  - enabled: 1
+    path: Assets/Scenes/Car/Car Crash.unity
+    guid: bd39678ef3597cafebf76b45e6f84adc
   m_configObjects: {}
