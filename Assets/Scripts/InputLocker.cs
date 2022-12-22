@@ -24,4 +24,9 @@ public static class InputLocker
     {
         tags.Remove(tag);
     }
+
+    public static void Reset()
+    {
+        tags.Clear();
+    }
 }

@@ -66,6 +66,7 @@ public class SceneTransition : MonoBehaviour
 
     public void LoadNewScene()
     {
+        InputLocker.Reset();
         SceneManager.LoadScene(sceneToLoad);
     }
 
