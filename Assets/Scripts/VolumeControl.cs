@@ -6,16 +6,23 @@ using UnityEngine;
 public class VolumeControl
 {
     private AudioMixer mixer;
-    private float defaultSfx = 0f;
-    private float defaultMusic = 0f;
-    private float defaultVoice = 0f;
+
+    private static float defaultSfx = 0f;
+    private static float defaultMusic = 0f;
+    private static float defaultVoice = 0f;
+    private static bool initialized = false;
 
     public VolumeControl(AudioMixer mixer)
     {
         this.mixer = mixer;
-        mixer.GetFloat("SFX Volume", out defaultSfx);
-        mixer.GetFloat("Music Volume", out defaultMusic);
-        mixer.GetFloat("Voice Volume", out defaultVoice);
+
+        if (!initialized)
+        {
+            mixer.GetFloat("SFX Volume", out defaultSfx);
+            mixer.GetFloat("Music Volume", out defaultMusic);
+            mixer.GetFloat("Voice Volume", out defaultVoice);
+            initialized = true;
+        }
     }
 
     public void ChangeSfx(float volume)
