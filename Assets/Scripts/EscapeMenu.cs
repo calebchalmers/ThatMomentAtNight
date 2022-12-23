@@ -21,15 +21,15 @@ public class EscapeMenu : MonoBehaviour
     {
         volumeControl = new VolumeControl(mixer);
 
-        float volume_voice = PlayerPrefs.GetFloat("volume_voice", 1f);
+        float volume_voice = PlayerPrefs.GetFloat("volume_voice", sliderVoice.value);
         volumeControl.ChangeVoice(volume_voice);
         sliderVoice.value = volume_voice;
 
-        float volume_sfx = PlayerPrefs.GetFloat("volume_sfx", 1f);
+        float volume_sfx = PlayerPrefs.GetFloat("volume_sfx", sliderSfx.value);
         volumeControl.ChangeSfx(volume_sfx);
         sliderSfx.value = volume_sfx;
 
-        float volume_music = PlayerPrefs.GetFloat("volume_music", 1f);
+        float volume_music = PlayerPrefs.GetFloat("volume_music", sliderMusic.value);
         volumeControl.ChangeMusic(volume_music);
         sliderMusic.value = volume_music;
 

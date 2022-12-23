@@ -20,11 +20,11 @@ public class Car : MonoBehaviour
     [Header("Crash")]
     public int crashSceneIndex;
     public GameObject crashSound;
-    public AudioMixerSnapshot crashMixerSnapshot;
 
     private SceneTransition sceneTransition;
     private Rigidbody2D rb;
     private Animator animator;
+    private AudioSource driveAudioSource;
     private bool crashed = false;
     private bool inputLocked;
     private float wheelAngle = 0f;
@@ -41,12 +41,14 @@ public class Car : MonoBehaviour
         sceneTransition = SceneTransition.Find();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        driveAudioSource = GetComponent<AudioSource>();
         frontWheelDistance = frontWheels.localPosition.magnitude;
     }
 
     void Update()
     {
         inputDir = Input.GetAxisRaw("Horizontal");
+        driveAudioSource.enabled = !InputLocker.IsLocked;
 
         Vector3 wheelEuler = frontWheels.localEulerAngles;
         wheelEuler.z = wheelAngle;

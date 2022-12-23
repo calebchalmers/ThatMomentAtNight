@@ -107,7 +107,7 @@ public class SceneTransition : MonoBehaviour
     private IEnumerator AnimateFadeAudio(float from, float to, float duration)
     {
         float time = 0f;
-        while (time <= duration)
+        while (time < duration)
         {
             time = Mathf.Min(time + Time.deltaTime, duration);
             float volume = Mathf.Lerp(from, to, time / duration);

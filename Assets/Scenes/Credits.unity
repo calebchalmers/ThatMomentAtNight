@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 813bf033a602813bca3911f9a66c3ed8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 5
+  waitTime: 10
   restart: 0
 --- !u!4 &415550577
 Transform:
@@ -476,7 +476,7 @@ PrefabInstance:
     - target: {fileID: 7619362297781566910, guid: d9e94154aac2a6aa6864a5447b503edc, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: eee6b90400dd946b799bd21be2a2c21a, type: 2}
+      objectReference: {fileID: 9100000, guid: 55dcaec58b38c1a5aa8e183201114051, type: 2}
     - target: {fileID: 7619362297781566911, guid: d9e94154aac2a6aa6864a5447b503edc, type: 3}
       propertyPath: m_RootOrder
       value: 1

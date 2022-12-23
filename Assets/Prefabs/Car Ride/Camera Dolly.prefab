@@ -128,7 +128,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -1326897310058645081, guid: 1aea27f3c8e123211b6f89486bc5e496, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.85
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -256,7 +256,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -517517585828751989, guid: 1aea27f3c8e123211b6f89486bc5e496, type: 2}
   m_audioClip: {fileID: 8300000, guid: 6973143d661eef1c588e8fe483d6d5a2, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.4
+  m_Volume: 0.15
   m_Pitch: 1.5
   Loop: 0
   Mute: 0
@@ -840,7 +840,7 @@ MonoBehaviour:
   titles:
   - Katamari
   - "Sue\xF1o"
-  - Hop home
+  - Vitae
   - Abyss
   songs:
   - {fileID: 8300000, guid: 5a5126cdd1d1a3c2da93d4a7abcadfc5, type: 3}
