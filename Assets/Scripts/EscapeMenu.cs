@@ -11,12 +11,28 @@ public class EscapeMenu : MonoBehaviour
     public bool showOnStart = false;
     public GameObject menu;
     public AudioMixer mixer;
-    public Toggle toggleVoice;
-    public Toggle toggleSfx;
-    public Toggle toggleMusic;
+    public Slider sliderVoice;
+    public Slider sliderSfx;
+    public Slider sliderMusic;
+
+    private VolumeControl volumeControl;
 
     void Start()
     {
+        volumeControl = new VolumeControl(mixer);
+
+        float volume_voice = PlayerPrefs.GetFloat("volume_voice", 1f);
+        volumeControl.ChangeVoice(volume_voice);
+        sliderVoice.value = volume_voice;
+
+        float volume_sfx = PlayerPrefs.GetFloat("volume_sfx", 1f);
+        volumeControl.ChangeSfx(volume_sfx);
+        sliderSfx.value = volume_sfx;
+
+        float volume_music = PlayerPrefs.GetFloat("volume_music", 1f);
+        volumeControl.ChangeMusic(volume_music);
+        sliderMusic.value = volume_music;
+
         if (showOnStart)
         {
             SetShowing(true);
@@ -36,19 +52,25 @@ public class EscapeMenu : MonoBehaviour
         return on ? 0.0f : -80.0f;
     }
 
-    public void OnToggleVoice()
+    public void OnVolumeVoice()
     {
-        mixer.SetFloat("Voice Volume", Volume(toggleVoice.isOn));
+        float volume = sliderVoice.value;
+        volumeControl.ChangeVoice(volume);
+        PlayerPrefs.SetFloat("volume_voice", volume);
     }
 
-    public void OnToggleSfx()
+    public void OnVolumeSfx()
     {
-        mixer.SetFloat("SFX Volume", Volume(toggleSfx.isOn));
+        float volume = sliderSfx.value;
+        volumeControl.ChangeSfx(volume);
+        PlayerPrefs.SetFloat("volume_sfx", volume);
     }
 
-    public void OnToggleMusic()
+    public void OnVolumeMusic()
     {
-        mixer.SetFloat("Music Volume", Volume(toggleMusic.isOn));
+        float volume = sliderMusic.value;
+        volumeControl.ChangeMusic(volume);
+        PlayerPrefs.SetFloat("volume_music", volume);
     }
 
     public void Resume()

@@ -98,25 +98,22 @@ public class SceneTransition : MonoBehaviour
 
     private void FadeAudio(bool intro)
     {
-        float[] weights = { 0.0f, 0.0f };
+        float from = intro ? -80f : 0f;
+        float to = intro ? 0f : -80f;
         float duration = intro ? introFadeDuration : outroFadeDuration;
+        StartCoroutine(AnimateFadeAudio(from, to, duration));
+    }
 
-        if (intro)
+    private IEnumerator AnimateFadeAudio(float from, float to, float duration)
+    {
+        float time = 0f;
+        while (time <= duration)
         {
-            weights[0] = 1.0f;
+            time = Mathf.Min(time + Time.deltaTime, duration);
+            float volume = Mathf.Lerp(from, to, time / duration);
+            audioMixer.SetFloat("Master Volume", volume);
+            yield return null;
         }
-        else // outro
-        {
-            weights[1] = 1.0f;
-        }
-
-        audioMixer.TransitionToSnapshots(
-            new AudioMixerSnapshot[] {
-                audioMixer.FindSnapshot("Default"),
-                audioMixer.FindSnapshot("Muted")
-            },
-            weights, duration
-        );
     }
 
     public static SceneTransition Find()
