@@ -202,10 +202,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  minSpeed: 8
+  minSpeed: 6.6666665
   maxSpeed: 30
-  accel: 0.4
-  brakeDecel: 4
+  accel: 1
+  brakeDecel: 6
   crashDecel: 40
   maxTurnAngle: 25
   turnSpeed: 1800

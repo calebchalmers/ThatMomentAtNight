@@ -633,7 +633,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 607086182625713814, guid: 2ee222b169cc7366db324ba0a8755e70, type: 3}
       propertyPath: triggerRadius
-      value: 5.2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9176020673897132784, guid: 2ee222b169cc7366db324ba0a8755e70, type: 3}
       propertyPath: m_RootOrder
